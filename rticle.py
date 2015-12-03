@@ -15,10 +15,13 @@ import cgi
 import signal
 import time
 import cPickle as pickle
+import os
 
 # v0.2
 # TODO: D) Filter by URL extension
 # TODO: C) Filter out sites like imgur, youtube, etc.
+
+working_dir = os.path.dirname(os.path.realpath(__file__))
 
 ################
 # Settings
@@ -33,11 +36,11 @@ minimum_article_length = 0
 ###############
 
 def create_db():
-    pickle.dump([], open(db_file, "wb" ))
+    pickle.dump([], open(working_dir + '/' + db_file, "wb" ))
     return []
 
 def load_db():
-    return pickle.load(open(db_file, "rb" ))
+    return pickle.load(open(working_dir + '/' + db_file, "rb" ))
 
 def get_reddit_json(id):
     headers = {'user-agent': 'my-app/0.0.1'}
@@ -104,10 +107,10 @@ class App(object):
 # Init
 ###############
 
-with open('atom.tmpl', 'r') as f:
+with open(working_dir + '/atom.tmpl', 'r') as f:
     atom_tmpl = f.read()
 
-with open('item.tmpl', 'r') as f:
+with open(working_dir + '/item.tmpl', 'r') as f:
     item_tmpl = f.read()
 
 try:
