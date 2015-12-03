@@ -17,9 +17,9 @@ Usage
 
 > rticle is currently supported in python 2.7. Try `python2` if the above fails to load
 
-For articles of a subreddit: [http://localhost:8080/reddit?id=r/linux](http://localhost:8080/reddit?id=r/linux)
+For articles of a subreddit: [http://localhost:41213/reddit?id=r/linux](http://localhost:8080/reddit?id=r/linux)
 
-For articles of a domain: [http://localhost:8080/reddit?id=domain/arstechnica.com](http://localhost:8080/reddit?id=domain/arstechnica.com)
+For articles of a domain: [http://localhost:41213/reddit?id=domain/arstechnica.com](http://localhost:8080/reddit?id=domain/arstechnica.com)
 
 ### Todo
 
